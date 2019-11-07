@@ -1,17 +1,92 @@
 $rouge: rgba(153, 0, 51, 1);
+$bleu: rgba(0, 102, 102, 1);
 $rouge_sombre: darken($rouge, 10%);
+$bleu_sombre: darken($bleu, 5%);
+
+.bleu{
+  color: $bleu_sombre;
+}
+
+.blanc{
+  color: white;
+}
 
 div#top{
+  height:40rem;
   background-image: url("../background.jpg");
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+
   .reduc_rouge{
     display: flex;
+    flex-direction: row;
     background-color:$rouge_sombre;
-    color:white;
-    h2{
-      font-size:1rem;
+    align-items: center;
+    width:30%;
+    transform: rotate(20deg);
+    h2 {
+      font-size: 1rem;
+      margin: 1rem;
+      text-align: center;
+      small {
+        font-size: 0.8rem;
+        font-weight: lighter;
+      }
     }
-    h3{
-      font-size:0.8rem;
+  }
+  .bottom_texte{
+    width:100%;
+    h2 {
+      font-size: 1rem;
+      margin: 1rem;
+      text-align: left;
+      small {
+        font-size: 0.8rem;
+        font-weight: lighter;
+      }
+    }
+
+  }
+}
+
+div#rdv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .rdv_right{
+    border: 2px solid $bleu_sombre;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+div.textcenter{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  h2,h3{
+    text-align: center;
+  }
+}
+
+div#bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .flex_center{
+    width:50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img{
+      border-radius: 10rem;
     }
   }
 }
+
