@@ -91,6 +91,10 @@ div.textcenter h2, div.textcenter h3 {
   text-align: center;
 }
 
+div.bottom_titre {
+  font-family: GothamHTF;
+}
+
 div#bottom {
   display: -ms-flexbox;
   display: flex;
@@ -100,7 +104,7 @@ div#bottom {
       align-items: center;
 }
 
-div#bottom .flex_center {
+div#bottom .elements {
   width: 50%;
   display: -ms-flexbox;
   display: flex;
@@ -112,8 +116,28 @@ div#bottom .flex_center {
       justify-content: center;
 }
 
-div#bottom .flex_center img {
-  border-radius: 10rem;
+@media only screen and (min-width: 480px) {
+  div#rdv {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+  }
+  div#bottom {
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  div#rdv {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  div.bottom_titre {
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

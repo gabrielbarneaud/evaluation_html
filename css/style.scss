@@ -74,19 +74,38 @@ div.textcenter{
   }
 }
 
+div.bottom_titre{
+  font-family: GothamHTF;
+}
+
 div#bottom{
   display: flex;
   flex-direction: column;
   align-items: center;
-  .flex_center{
+  .elements{
     width:50%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    img{
-      border-radius: 10rem;
-    }
   }
 }
 
+@media only screen and (min-width: 480px) {
+  div#rdv{
+    display: flex;
+    justify-content: space-between;
+  }
+  div#bottom{
+    flex-direction:row;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  div#rdv {
+    justify-content: space-around;
+  }
+  div.bottom_titre {
+    flex-direction: row-reverse;
+  }
+}
