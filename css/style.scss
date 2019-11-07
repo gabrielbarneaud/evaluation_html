@@ -1,0 +1,17 @@
+$rouge: rgba(153, 0, 51, 1);
+$rouge_sombre: darken($rouge, 10%);
+
+div#top{
+  background-image: url("../background.jpg");
+  .reduc_rouge{
+    display: flex;
+    background-color:$rouge_sombre;
+    color:white;
+    h2{
+      font-size:1rem;
+    }
+    h3{
+      font-size:0.8rem;
+    }
+  }
+}

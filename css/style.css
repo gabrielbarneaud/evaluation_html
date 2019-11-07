@@ -1,0 +1,20 @@
+div#top {
+  background-image: url("../background.jpg");
+}
+
+div#top .reduc_rouge {
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #660022;
+  color: white;
+}
+
+div#top .reduc_rouge h2 {
+  font-size: 1rem;
+}
+
+div#top .reduc_rouge h3 {
+  font-size: 0.8rem;
+}
+
+/*# sourceMappingURL=style.css.map */
