@@ -1,7 +1,22 @@
+@font-face {
+  font-family: 'GothamHTF';
+  font-style: normal;
+  font-weight: normal;
+  src: local('GothamHTF'), url('../fonts/GothamHTF-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BerninaSansBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('BerninaSansBold'), url('../fonts/BerninaSans-Web-CondensedBold.woff2') format('woff2');
+}
+
 $rouge: rgba(153, 0, 51, 1);
 $bleu: rgba(0, 102, 102, 1);
 $rouge_sombre: darken($rouge, 10%);
 $bleu_sombre: darken($bleu, 5%);
+$white_bandeau: rgba(255,255,255,0.25);
 
 .bleu{
   color: $bleu_sombre;
@@ -11,9 +26,13 @@ $bleu_sombre: darken($bleu, 5%);
   color: white;
 }
 
-div#top{
+#top{
   height:40rem;
   background-image: url("../background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -21,26 +40,35 @@ div#top{
   align-content: space-around;
 
   .reduc_rouge{
-    display: flex;
-    flex-direction: row;
+    position:absolute;
+    top: 2rem;
+    right: 4rem;
+    width: 220px;
+    padding: 5px;
+    border-radius: 0.5rem;
+    transform: rotate(30deg);
+    transform-origin: bottom left;
     background-color:$rouge_sombre;
-    align-items: center;
-    width:30%;
-    transform: rotate(20deg);
     h2 {
-      font-size: 1rem;
+      font-family: 'BerninaSansBold', Arial, serif;
+      font-weight: bold;
       margin: 1rem;
       text-align: center;
       small {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         font-weight: lighter;
       }
     }
   }
   .bottom_texte{
     width:100%;
+    position:absolute;
+    bottom: 2rem;
+    background-color:$white_bandeau;
+
     h2 {
-      font-size: 1rem;
+      font-family: 'BerninaSansBold', Arial, serif;
+      font-size: 2.5rem;
       margin: 1rem;
       text-align: left;
       small {
@@ -52,7 +80,7 @@ div#top{
   }
 }
 
-div#rdv{
+#rdv{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,34 +98,56 @@ div.textcenter{
   flex-direction: column;
   align-items: center;
   h2,h3{
+    font-family: 'BerninaSansBold', Arial, serif;
     text-align: center;
   }
 }
 
 div.bottom_titre{
-  font-family: GothamHTF;
+  font-family: 'BerninaSansBold', Arial, serif;
 }
 
-div#bottom{
+#bottom{
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   .elements{
     width:50%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    h2{
+     font-family: 'GothamHTF', Arial, serif;
+    }
   }
 }
 
+img.logo{
+  border-radius: 50%;
+}
+
 @media only screen and (min-width: 480px) {
-  div#rdv{
+  #rdv{
     display: flex;
     justify-content: space-between;
   }
   div#bottom{
     flex-direction:row;
+    .elements{
+      width:40%;
+    }
+    .logo_sport{
+      order:1;
+    }
+    .logo_tel{
+      order:2;
+    }
+    .logo_corps{
+      order:3;
+    }
   }
 }
 
@@ -106,6 +156,13 @@ div#bottom{
     justify-content: space-around;
   }
   div.bottom_titre {
+    display: flex;
     flex-direction: row-reverse;
+  }
+  div#bottom{
+    flex-wrap: nowrap;
+  }
+    .elements{
+      width:25%;
   }
 }
